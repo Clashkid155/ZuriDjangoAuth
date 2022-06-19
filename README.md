@@ -1,0 +1,2 @@
+# ZuriDjangoAuth
+Auth for Django
