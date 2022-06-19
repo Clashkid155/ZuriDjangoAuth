@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link
+            href="https://fonts.googleapis.com/css?family=Karla&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="img/favicon.webp" type="image/x-icon"/>
+    <title>Zuri Team</title>
+</head>
+<body>
+<div class="container">
+    <img src="{% static 'img/zuri.svg' %}" alt="Zuri Team Logo" class="logo regLogo"/>
+    <section class="sec1 regSec">
+        <div class="con">
+            <h3 class="login font-display">Create a Secure Account</h3>
+            <p class="loginText">Welcome to the future of Savings & Investments</p>
+        </div>
+        <div class="form">
+            <form action="{% url 'signup' %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+                {#                <label for="fname" class="regLabel">First Name </label><br>#}
+                {#                <input type="text" id="fname" placeholder="Full Name" class="regInput"><br>#}
+                {#                <label for="email" class="regLabel">Email Address</label><br>#}
+                {#                <input type="email" id="email" placeholder="Email Address" class="regInput"><br>#}
+                {#                <label for="pward" class="regLabel">Password</label><br>#}
+                {#                <input type="password" id="pward" placeholder="Password" class="regInput"><label><br>#}
+                <button class="regBtn btn font-display btnReg">CREATE ACCOUNT</button>
+            </form>
+        </div>
+    </section>
+</div>
+<footer class="container">
+    <a href="{% url 'signin' %}">Already have an account? Login </a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Karla&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./favicon.webp" type="image/x-icon" />
+    <title>Zuri Team</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="img/zuri-logo-full.svg" alt="Zuri Team logo" class="logo" />
+      <section class="sec1">
+        <div class="con">
+          <h3 class="login font-display">Login to your account</h3>
+          <p class="loginText">Securely login your PiggyVest</p>
+        </div>
+        <div class="form">
+          <form action="{% url 'login' %}", method="post">
+            <label for="email" class="font-display"
+              >Email or Phone Number</label
+            >
+            <input type="email" class="email" />
+            <label for="password" class="font-display">Password </label>
+            <input type="password" class="password" />
+            <button class="btn font-display">LOG IN</button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <footer class="container link">
+      <a href="./register.html">Don't have an account? Register </a>
+    </footer>
+  </body>
+</html>

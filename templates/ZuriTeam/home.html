@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link
+            href="https://fonts.googleapis.com/css?family=Karla&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./favicon.webp" type="image/x-icon"/>
+    <title>Zuri Team</title>
+</head>
+<body>
+<div class="container">
+    <img src="{% static 'img/zuri.svg' %}" alt="Zuri Team logo" class="logo"/>
+
+    <div class="container sec1"><h3 class="login font-display">
+        Welcome {{ username.first_name | upper }}
+
+
+    </h3>
+        <b>Username: {{ username.username }}</b>
+        Hashed password: {{ username.password | truncatechars:10 }}
+        <a class="btn font-display" id="bt" href="{% url 'signout' %}">LOG OUT</a>
+
+    </div>
+    <footer class="container link">
+        {#        <!--      <a href="{% url 'register' %}">Don't have an account? Register </a>-->#}
+    </footer>
+
+    <script>
+        const element = document.getElementById("btn");
+        element.addEventListener("click", myFunction);
+
+        {#function myFunction() {#}
+        {#    document.getElementById("btn").inner = "Hello World";#}
+        {#    console.log("Hey");#}
+        {#    fetch({% url 'logout' %});#}
+        {#    window.location.href =#}
+        {#    {% url 'login' %}#}
+        {##}
+        {#}#}
+
+            console.log("Hi");
+    </script>
+</body>
+</html>
